@@ -1,7 +1,6 @@
 // player number
 const button = document.querySelector('#button-addon2');
 const numberPlayer = document.querySelector('.input-number');
-// const btnClose = document.querySelector('.btn-close');
 const container = document.querySelector('.container');
 
 button.addEventListener('click', e => {
