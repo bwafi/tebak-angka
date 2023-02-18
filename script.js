@@ -1,6 +1,8 @@
 // player number
 const button = document.querySelector('#button-addon2');
 const numberPlayer = document.querySelector('.input-number');
+// const btnClose = document.querySelector('.btn-close');
+const container = document.querySelector('.container');
 
 button.addEventListener('click', e => {
   // number Comp
@@ -15,6 +17,12 @@ button.addEventListener('click', e => {
     alert.innerHTML = alertGreater(inputNumber, numberComp);
   } else if (inputNumber < numberComp) {
     alert.innerHTML = alertSmaller(inputNumber, numberComp);
+  }
+});
+
+container.addEventListener('click', function (e) {
+  if (e.target.className == 'btn-close') {
+    numberPlayer.value = '';
   }
 });
 
@@ -41,7 +49,7 @@ function alertGreater(inputNumber, numberComp) {
 }
 
 function alertSmaller(inputNumber, numberComp) {
-  return `<div class="alert alert-warning mt-1 mx-auto alert-dismissible fade show" role="alert" id="actionAlert">
+  return `<div class="alert alert-primary mt-1 mx-auto alert-dismissible fade show" role="alert" id="actionAlert">
        angka ${inputNumber} terlalu kecil, angka computer adalah ${numberComp}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>`;
